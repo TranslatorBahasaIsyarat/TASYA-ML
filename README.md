@@ -67,11 +67,14 @@ To use the trained model for inference, follow these steps:
    model = tf.keras.models.load_model('model-with-transfer-learning.h5')
 
 2. Preprocess the input image:
-# Assuming `image` is a NumPy array containing the image
-# Resize the image to the required input shape
+```python
+#Assuming `image` is a NumPy array containing the image
+#Resize the image to the required input shape
 processed_image = skimage.transform.resize(image, (64, 64, 3))
+```
 
-3. Make predictions:
+4. Make predictions:
+```python
 import numpy as np
 
 # Expand dimensions to match the model's input shape
@@ -82,3 +85,4 @@ predictions = model.predict(input_image)
 
 # Get the predicted class label
 predicted_class = np.argmax(predictions)
+```
